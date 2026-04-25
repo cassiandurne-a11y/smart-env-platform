@@ -257,6 +257,28 @@ const products = [
     tags: ["hub", "core4hub", "mini", "smart home", "control"],
     featured: false,
   },
+  
+  // APPS
+  {
+    name: "Core4Health",
+    slug: "core4health",
+    description: "An app for smartphones that tracks macros, overall health, steps and calories.",
+    price: 0.00,
+    imageUrl: "/images/app.jpg",
+    category: Category.APP,
+    tags: ["app", "health", "tracker", "macros", "calories", "steps", "smartphone"],
+    featured: true,
+  },
+  {
+    name: "Core4Watch",
+    slug: "core4watch",
+    description: "An app for smartwatches that records heart rate, pulse, oxygen levels and other stats.",
+    price: 0.00,
+    imageUrl: "/images/app.jpg",
+    category: Category.APP,
+    tags: ["app", "watch", "health", "heart rate", "pulse", "oxygen", "smartwatch"],
+    featured: true,
+  },
 ];
 
 async function main() {

@@ -96,6 +96,7 @@ enum Category {
   GATEWAY
   HUB
   KIT
+  APP
 }
 
 enum OrderStatus {

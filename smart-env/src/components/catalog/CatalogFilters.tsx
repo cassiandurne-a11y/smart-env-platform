@@ -10,6 +10,7 @@ const CATEGORIES = [
   { label: "Sensors", value: "SENSOR" as Category },
   { label: "Hubs", value: "HUB" as Category },
   { label: "Kits", value: "KIT" as Category },
+  { label: "Apps", value: "APP" as Category },
 ];
 
 interface CatalogFiltersProps {

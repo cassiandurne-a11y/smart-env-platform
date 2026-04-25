@@ -13,6 +13,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   GATEWAY: "📡",
   HUB: "📱",
   KIT: "📦",
+  APP: "📲",
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -21,6 +22,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   GATEWAY: "bg-purple-500/10 text-purple-400 border-purple-500/20",
   HUB: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
   KIT: "bg-green-500/10 text-green-400 border-green-500/20",
+  APP: "bg-pink-500/10 text-pink-400 border-pink-500/20",
 };
 
 interface ProductCardProps {
@@ -42,13 +44,21 @@ export function ProductCard({ product }: ProductCardProps) {
       className="group glass rounded-2xl overflow-hidden card-hover border border-white/5 flex flex-col"
       id={`product-card-${product.slug}`}
     >
-      {/* Image placeholder */}
+      {/* Image / Placeholder */}
       <div className="relative h-44 bg-gradient-to-br from-white/5 to-white/[0.02] overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-5xl">
-          {CATEGORY_ICONS[product.category] ?? "📦"}
-        </div>
+        {!product.imageUrl.startsWith("/images/") ? (
+          <img 
+            src={product.imageUrl} 
+            alt={product.name} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-5xl">
+            {CATEGORY_ICONS[product.category] ?? "📡"}
+          </div>
+        )}
         {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent" />
 
         {/* Category badge */}
         <div className="absolute top-3 left-3">
